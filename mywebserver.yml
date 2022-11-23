@@ -6,9 +6,9 @@
     apt: 
       name: apache2
       state: present
-    when: ansible_family == "Debian"
+    when: ansible_os_family == "Debian"
   - name: Start the webserver
     service:
       name: apache2
       state: started
-    when: ansible_family == "Debian"
+    when: ansible_os_family == "Debian"
