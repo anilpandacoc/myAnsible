@@ -12,14 +12,15 @@
       name: apache2
       state: started
     when: ansible_os_family == "Debian"
-  - name: i want to install webserver on RedHat 
-    yum:
+  - name: I want to install web server on Amazon Linux
+    yum: 
       name: httpd
       state: present
-    when: ansible_os_family =="RedHat"
-
-  - name: i want to start webserver on RedHat
+    when: ansible_os_family == "RedHat"
+  - name: Start the webserver
     service:
-       name: httpd
-       state: started
-    when: ansible_os_family =="RedHat"
+      name: httpd
+      state: started
+    when: ansible_os_family == "RedHat"
+
+ 
